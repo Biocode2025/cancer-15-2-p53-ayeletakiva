@@ -69,3 +69,45 @@ def RNA_prot(RNA):
   return AA_protein
 
 
+### main program ###
+
+#יצירת מילון הקודונים
+RNA_codon_table = {}
+Read_dict()
+
+file = open("data/p53_sequence.fa")
+results_file = open("results/mutated_p53.fasta", "w")
+p53_seq = ""
+for line in file:
+  if line[0] == ">":
+    continue
+  else:
+    line = line.rstrip("\n\r")
+    line = line.upper()
+    p53_seq += line
+
+
+mut_p53_seq = p53_seq
+gen = 3
+for i in range(gen):
+  rand_mut = random.randrange(0,3)
+  if rand_mut == 0:
+    mut_p53_seq = Mutate_DNA(mut_p53_seq)
+  elif rand_mut == 1:
+    mut_p53_seq = Insert_DNA(mut_p53_seq)
+  elif rand_mut == 2:
+    mut_p53_seq = Delete_DNA(mut_p53_seq)
+
+
+#תעתוק ותרגום הרצף המקורי  והרצף החדש
+mut_p53_seq = DNA_RNA_Cod(mut_p53_seq)
+mut_p53_seq = RNA_prot(mut_p53_seq)
+p53_seq = DNA_RNA_Cod(p53_seq)
+p53_seq = RNA_prot(p53_seq)
+
+results_file.write("original protein sequance:\n%s\n" %p53_seq)
+results_file.write("mutated protein sequance:\n%s\n" %mut_p53_seq)
+conc = input("What is your conclusion? Did the protein get shorter?")
+results_file.write(conc)
+file.close()
+results_file.close()
