@@ -63,7 +63,7 @@ def RNA_prot(RNA):
       if codon in RNA_codon_table:
         if RNA_codon_table[codon] == "*":
           AA_protein += (RNA_codon_table[codon])
-          #break
+          break
         else:
           AA_protein += (RNA_codon_table[codon])
   return AA_protein
@@ -75,7 +75,7 @@ def RNA_prot(RNA):
 RNA_codon_table = {}
 Read_dict()
 
-file = open("data/p53_sequence.fa")
+file = open("data/human_p53_coding.txt")
 results_file = open("results/mutated_p53.fasta", "w")
 p53_seq = ""
 for line in file:
