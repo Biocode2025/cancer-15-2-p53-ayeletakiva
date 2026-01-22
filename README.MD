@@ -1,2 +1,5 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/BGk7Dnyu)
-# Insert information about your project here.
+התוכנית הזאת מקבלת את קובץ הרצף של חלבון p53 
+היא משעתקת ומתרגמת את הרצף של הדנ"א המקורי לרצף חומצות אמיניות
+התוכנית לוקחת את רצף הדנ"א המקורי ועושה לו שלוש מוטציות נקודתיות כדי ליצור חלבון מוטנטי
+התוכנית משעתקת ומתרגמת את רצף דנ"א המוטנטי לחלבון חדש ובסוף מדפיסה את רצף החלבון המקורי והמוטנטי לקובץ תוצאות כך שנראה האם החלבון המוטנטי התקצר.
